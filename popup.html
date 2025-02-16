@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      box-shadow: 0 0 0 2px rgba(74,144,226,0.2);
+    }
+
+    .checkbox-group {
+      margin-bottom: 15px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    #saveButton {
+      background-color: #4a90e2;
+      color: white;
+    }
+
+    #saveButton:hover {
+      background-color: #357abd;
+    }
+
+    #clearButton {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    #clearButton:hover {
+      background-color: #c0392b;
+    }
+
+    .auth-fields {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .status-message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-group">
+      <label for="proxyHost">Proxy Sunucusu</label>
+      <input type="text" id="proxyHost" placeholder="örn: proxy.example.com">
+    </div>
+    
+    <div class="form-group">
+      <label for="proxyPort">Port</label>
+      <input type="number" id="proxyPort" placeholder="örn: 8080">
+    </div>
+
+    <div class="checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" id="useAuth">
+        Kimlik doğrulama kullan
+      </label>
+    </div>
+
+    <div class="auth-fields" id="authFields">
+      <div class="form-group">
+        <label for="username">Kullanıcı Adı</label>
+        <input type="text" id="username">
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Şifre</label>
+        <input type="password" id="password">
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="saveButton">Kaydet</button>
+      <button id="clearButton">Temizle</button>
+    </div>
+
+    <div id="statusMessage" class="status-message"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
